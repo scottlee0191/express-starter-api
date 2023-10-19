@@ -3,7 +3,7 @@
 How to use this template:
 
 ```sh
-npx create-express-api --typescript --directory my-api-name
+git clone
 ```
 
 Includes API Server utilities:
@@ -35,23 +35,40 @@ Development utilities:
 ## Setup
 
 ```
-npm install
+pnpm install
 ```
 
 ## Lint
 
 ```
-npm run lint
+pnpm lint
 ```
 
 ## Test
 
 ```
-npm run test
+pnpm coverage
+```
+
+## Test
+
+```
+pnpm test
 ```
 
 ## Development
 
 ```
-npm run dev
+pnpm dev
 ```
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+- [ ] Prisma integration
+- [ ] Validate
+- [ ] Authentication
+- [ ] Authorization
+- [ ] Swagger
+- [ ] Pagination
