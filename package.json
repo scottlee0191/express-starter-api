@@ -12,7 +12,7 @@
     "lint:fix": "pnpm run lint --fix",
     "prettier": "pnpx prettier src --check",
     "prettier:fix": "pnpm run prettier --write",
-    "test": "vitest",
+    "test": "vitest run",
     "build": "tsc",
     "prepare": "husky install"
   },
