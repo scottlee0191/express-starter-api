@@ -66,9 +66,10 @@ pnpm dev
 
 ## Roadmap
 
-- [ ] Prisma integration
+- [x] Prisma integration
 - [ ] Validate
 - [ ] Authentication
 - [ ] Authorization
 - [ ] Swagger
 - [ ] Pagination
+- [ ] Process management: advanced production process management using PM2
