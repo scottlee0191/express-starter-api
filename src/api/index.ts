@@ -1,16 +1,16 @@
 import express from 'express'
 
 import MessageResponse from '../interfaces/MessageResponse'
-import emojis from './emojis'
+import postRouter from './posts/post.route'
 
 const router = express.Router()
 
 router.get<object, MessageResponse>('/', (req, res) => {
   res.json({
-    message: 'API - 👋🌎🌍🌏',
+    message: 'API - V1',
   })
 })
 
-router.use('/emojis', emojis)
+router.use('/posts', postRouter)
 
 export default router

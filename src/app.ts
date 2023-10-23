@@ -5,8 +5,7 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 
 import api from './api'
-import MessageResponse from './interfaces/MessageResponse'
-import * as middlewares from './middlewares'
+import { errorHandler, notFound } from './middlewares'
 
 dotenv.config()
 
@@ -16,16 +15,8 @@ app.use(morgan('dev'))
 app.use(helmet())
 app.use(cors())
 app.use(express.json())
-
-app.get<object, MessageResponse>('/', (req, res) => {
-  res.status(201).json({
-    message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
-  })
-})
-
 app.use('/api/v1', api)
-
-app.use(middlewares.notFound)
-app.use(middlewares.errorHandler)
+app.use(notFound)
+app.use(errorHandler)
 
 export default app

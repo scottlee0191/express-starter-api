@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker'
+
 import prisma from '../prisma'
 
 async function main() {
@@ -8,11 +10,13 @@ async function main() {
       email: 'alice@prisma.io',
       name: 'Alice',
       posts: {
-        create: {
-          title: 'Check out Prisma with Next.js',
-          content: 'https://www.prisma.io/nextjs',
-          published: true,
-        },
+        create: Array(1000)
+          .fill({})
+          .map(() => ({
+            title: faker.lorem.sentence(),
+            content: 'https://www.prisma.io/nextjs',
+            published: true,
+          })),
       },
     },
   })

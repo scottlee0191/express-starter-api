@@ -10,17 +10,7 @@ describe('GET /api/v1', async () => {
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200, {
-        message: 'API - 👋🌎🌍🌏',
+        message: 'API - V1',
       })
-  })
-})
-
-describe('GET /api/v1/emojis', () => {
-  test('responds with a json message', async () => {
-    await request(app)
-      .get('/api/v1/emojis')
-      .set('Accept', 'application/json')
-      .expect('Content-Type', /json/)
-      .expect(200, ['😀', '😳', '🙄'])
   })
 })
