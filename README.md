@@ -68,7 +68,7 @@ pnpm dev
 
 - [x] Prisma integration
 - [x] Validate
-- [ ] crud example
+- [x] crud example
 - [ ] Authentication
 - [ ] Authorization
 - [ ] Swagger
