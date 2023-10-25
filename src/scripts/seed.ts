@@ -1,12 +1,15 @@
 import { faker } from '@faker-js/faker'
+import bcrypt from 'bcrypt'
 
 import prisma from '../prisma'
 
 async function main() {
+  const password = await bcrypt.hash('password', 10)
   const alice = await prisma.user.upsert({
     where: { email: 'alice@prisma.io' },
     update: {},
     create: {
+      password,
       email: 'alice@prisma.io',
       name: 'Alice',
       posts: {
@@ -24,6 +27,7 @@ async function main() {
     where: { email: 'bob@prisma.io' },
     update: {},
     create: {
+      password,
       email: 'bob@prisma.io',
       name: 'Bob',
       posts: {

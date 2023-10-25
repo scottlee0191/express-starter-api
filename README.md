@@ -69,8 +69,9 @@ pnpm dev
 - [x] Prisma integration
 - [x] Validate
 - [x] crud example
-- [ ] Authentication
+- [x] Pagination
+- [x] Authentication
+
 - [ ] Authorization
 - [ ] Swagger
-- [x] Pagination
 - [ ] Process management: advanced production process management using PM2

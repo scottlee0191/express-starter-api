@@ -49,7 +49,7 @@ export async function showPost(
   })
   if (!post) {
     res.status(400)
-    next(new Error('Not Found!'))
+    return next(new Error('Not Found!'))
   }
   return post
 }

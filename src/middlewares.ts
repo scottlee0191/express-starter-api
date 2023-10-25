@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextFunction, Request, Response } from 'express'
+import jwt from 'jsonwebtoken'
 import { AnyZodObject, ZodError } from 'zod'
 
 import type ErrorResponse from './interfaces/ErrorResponse'
@@ -42,3 +43,22 @@ export const validate =
       next(error)
     }
   }
+
+export const isAuth = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { authorization } = req.headers
+    const token = authorization?.split(' ')[1]
+    if (token) {
+      req.user = jwt.verify(token, process.env.JWT_SECRET ?? '')
+      return next()
+    }
+    throw new Error('Unauthorized!')
+  } catch (error) {
+    res.status(401)
+    next(error)
+  }
+}

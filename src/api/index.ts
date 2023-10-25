@@ -1,6 +1,7 @@
 import express from 'express'
 
 import MessageResponse from '../interfaces/MessageResponse'
+import authRouter from './auth/auth.route'
 import postRouter from './posts/post.route'
 
 const router = express.Router()
@@ -12,5 +13,6 @@ router.get<object, MessageResponse>('/', (req, res) => {
 })
 
 router.use('/posts', postRouter)
+router.use('/auth', authRouter)
 
 export default router
